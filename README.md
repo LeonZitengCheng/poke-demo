@@ -2,9 +2,9 @@
 
 > When you've been swiping for a while, a small otter appears and asks: **"What were you looking for?"**
 
-🦦 Try it live: [coming soon]
+🦦 **[Try it live →](https://leonzitengcheng.github.io/poke-demo/)**
 
-![demo](docs/demo.gif)
+<!-- ![demo](docs/demo.gif) -->
 
 ---
 
@@ -54,7 +54,7 @@ The otter's mood persists across the session and shifts based on your choices. A
 | Styling | Tailwind CSS |
 | Animation | Framer Motion |
 | i18n | react-i18next (English / Chinese) |
-| Sound | Web Audio API via `HTMLAudioElement` with format probing |
+| Sound | HTML5 Audio with format probing (`.wav` / `.mp3` fallback) |
 | Otter art | Static PNG assets animated entirely in code |
 
 **Key libraries:** `framer-motion`, `react-i18next`, `i18next`
@@ -118,4 +118,4 @@ Planned next steps:
 
 **The three-path response model was a product insight, not a technical one.** I originally had a single "Got it" button. Watching people interact with it, I noticed they paused before tapping — they were deciding whether they actually *had* a reason. Splitting into three options (intentional / uncertain / dismissed) surfaced that hesitation as data and made the experience feel less like an accusation.
 
-**Static assets + code animation beats rich media for expressive UI.** Four mood-specific PNGs with distinct Framer Motion `animate` configs gave me expressive, interruptible animations in ~60 lines of JavaScript — without any asset pipeline overhead or designer tool chain dependency.
+**Static assets + code animation beats rich media for expressive UI.** Four mood-specific PNGs with distinct Framer Motion `animate` configs gave me expressive, interruptible animations with minimal code overhead — without any asset pipeline overhead or designer tool chain dependency.
