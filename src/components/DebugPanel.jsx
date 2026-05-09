@@ -5,7 +5,10 @@ import { getSoundEnabled, setSoundEnabled } from '../utils/sound.js'
 
 const MOOD_BUTTONS = ['happy', 'calm', 'withered', 'playful']
 
-export default function DebugPanel({ onForceMood, onTrigger, onOpenDialog, onReset, elapsed, cardCount }) {
+export default function DebugPanel({
+  onForceMood, onTrigger, onOpenDialog, onReset, elapsed, cardCount,
+  interruptionCount, onForceStage2, onForceStage3, onForceSilent, onResetSession,
+}) {
   const { t, i18n } = useTranslation()
   const [open, setOpen] = useState(false)
   const [soundOn, setSoundOn] = useState(() => getSoundEnabled())
@@ -34,7 +37,7 @@ export default function DebugPanel({ onForceMood, onTrigger, onOpenDialog, onRes
       <AnimatePresence>
         {open && (
           <motion.div
-            className="absolute top-10 right-0 bg-white rounded-2xl shadow-xl p-3 w-52 text-xs"
+            className="absolute top-10 right-0 bg-white rounded-2xl shadow-xl p-3 w-56 text-xs"
             initial={{ opacity: 0, scale: 0.9, y: -8 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: -8 }}
@@ -98,9 +101,37 @@ export default function DebugPanel({ onForceMood, onTrigger, onOpenDialog, onRes
               </button>
             </div>
 
-            <div className="border-t pt-2 text-gray-400 space-y-0.5">
+            <div className="border-t pt-2 mb-2 text-gray-400 space-y-0.5">
               <p>{t('debug.scroll_duration', { time: fmt(elapsed) })}</p>
               <p>{t('debug.cards_swiped', { count: cardCount })}</p>
+              <p className="font-medium text-gray-500">{t('debug.interruption_count', { count: interruptionCount ?? 0 })}</p>
+            </div>
+
+            <div className="border-t pt-2 flex flex-col gap-1">
+              <button
+                onClick={onForceStage2}
+                className="py-1.5 px-2 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 transition-colors"
+              >
+                {t('debug.force_stage2')}
+              </button>
+              <button
+                onClick={onForceStage3}
+                className="py-1.5 px-2 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 transition-colors"
+              >
+                {t('debug.force_stage3')}
+              </button>
+              <button
+                onClick={onForceSilent}
+                className="py-1.5 px-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-gray-600 transition-colors"
+              >
+                {t('debug.force_silent')}
+              </button>
+              <button
+                onClick={onResetSession}
+                className="py-1.5 px-2 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 transition-colors"
+              >
+                {t('debug.reset_session')}
+              </button>
             </div>
           </motion.div>
         )}

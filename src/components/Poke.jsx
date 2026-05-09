@@ -7,12 +7,20 @@ const MOOD_CONFIG = {
       y: [0, -4, 0],
       transition: { duration: 1.5, repeat: Infinity, ease: 'easeInOut' },
     },
+    idleLow: {
+      y: [0, -2, 0],
+      transition: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' },
+    },
   },
   calm: {
     src: '/poke-demo/assets/poke_calm.png',
     idle: {
       y: [0, -2, 0],
       transition: { duration: 3, repeat: Infinity, ease: 'easeInOut' },
+    },
+    idleLow: {
+      y: [0, -1, 0],
+      transition: { duration: 5, repeat: Infinity, ease: 'easeInOut' },
     },
   },
   withered: {
@@ -21,6 +29,10 @@ const MOOD_CONFIG = {
       y: 6,
       x: [0, -2, 2, 0],
       transition: { x: { duration: 0.4, repeat: Infinity, repeatDelay: 4, ease: 'easeInOut' } },
+    },
+    idleLow: {
+      y: 8,
+      transition: {},
     },
   },
   playful: {
@@ -33,11 +45,33 @@ const MOOD_CONFIG = {
         y: { duration: 0.6, repeat: Infinity, repeatDelay: 4.4, ease: 'easeOut' },
       },
     },
+    idleLow: {
+      y: [0, -1, 0],
+      transition: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+    },
   },
 }
 
-export default function Poke({ mood = 'calm', visible, onClick }) {
+export default function Poke({ mood = 'calm', visible, onClick, lowEnergy = false, silentMode = false, onSilentTap }) {
   const config = MOOD_CONFIG[mood] || MOOD_CONFIG.calm
+  const idleAnimation = lowEnergy ? (config.idleLow || config.idle) : config.idle
+
+  if (silentMode) {
+    return (
+      <div
+        className="absolute bottom-4 right-4 z-30 cursor-pointer select-none"
+        style={{ opacity: 0.7 }}
+        onClick={onSilentTap}
+      >
+        <img
+          src={config.src}
+          alt="poke silent"
+          className="w-12 h-12 object-contain drop-shadow-md"
+          draggable={false}
+        />
+      </div>
+    )
+  }
 
   return (
     <AnimatePresence>
@@ -51,7 +85,7 @@ export default function Poke({ mood = 'calm', visible, onClick }) {
           onClick={onClick}
         >
           <motion.div
-            animate={config.idle}
+            animate={idleAnimation}
             whileTap={{ scale: 1.1, transition: { type: 'spring', stiffness: 400, damping: 10, duration: 0.2 } }}
           >
             <img

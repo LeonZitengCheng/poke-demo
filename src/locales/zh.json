@@ -52,6 +52,35 @@
     "keep_scrolling": "继续刷",
     "tell_poke": "告诉戳戳"
   },
+  "interruption": {
+    "stage2": {
+      "dialogues": [
+        "你已经看了 {{N}} 个视频。平均每个 3 秒。",
+        "{{X}} 分钟过去了。是算法替你决定的吗？",
+        "你的拇指划过的距离，相当于一栋 5 层楼。"
+      ],
+      "data_line": "{{N}} 个视频 · {{X}} 分钟 · 平均 3 秒",
+      "options": {
+        "takeBreak": "休息 5 分钟",
+        "imDone": "我刷完了",
+        "keepScrolling": "继续刷"
+      }
+    },
+    "stage3": {
+      "dialogues": [
+        "你的眼睛已经工作 {{X}} 分钟了。眨几下眼好吗？",
+        "你已经驼着背好一会儿了。动动肩膀？",
+        "你的手机有点热。你的手有点累。我能感觉到。"
+      ],
+      "options": {
+        "takeCare": "我会照顾好自己的",
+        "justABitMore": "再刷一会儿"
+      }
+    },
+    "silentMode": {
+      "bubble": "你准备好了我就在。"
+    }
+  },
   "debug": {
     "tooltip": "调试面板",
     "panel_title": "戳戳调试面板",
@@ -60,7 +89,12 @@
     "open_dialog": "弹出打断对话框",
     "reset_timer": "重置滑动计时器",
     "scroll_duration": "滑动时长：{{time}}",
-    "cards_swiped": "已滑卡片：{{count}} 张"
+    "cards_swiped": "已滑卡片：{{count}} 张",
+    "interruption_count": "已打断：{{count}} 次",
+    "force_stage2": "强制第 2 次打断",
+    "force_stage3": "强制第 3 次打断",
+    "force_silent": "进入沉默模式",
+    "reset_session": "重置本次会话"
   },
   "welcome": {
     "tagline": "准备好了吗？",

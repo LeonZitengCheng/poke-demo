@@ -52,6 +52,35 @@
     "keep_scrolling": "Keep scrolling",
     "tell_poke": "Let Poke know"
   },
+  "interruption": {
+    "stage2": {
+      "dialogues": [
+        "You've watched {{N}} videos. Average view time? 3 seconds each.",
+        "{{X}} minutes have passed. Did the algorithm decide for you?",
+        "Your thumb has traveled the height of a 5-story building."
+      ],
+      "data_line": "{{N}} videos · {{X}} min · 3 sec avg",
+      "options": {
+        "takeBreak": "Take a 5-min break",
+        "imDone": "I'm done scrolling",
+        "keepScrolling": "Keep scrolling"
+      }
+    },
+    "stage3": {
+      "dialogues": [
+        "Your eyes have been working for {{X}} minutes. Maybe blink a few times?",
+        "You've been hunched over for a while. Roll your shoulders?",
+        "Your phone is warm. Your hand is tired. I can feel it from here."
+      ],
+      "options": {
+        "takeCare": "I'll take care of myself",
+        "justABitMore": "Just a bit more"
+      }
+    },
+    "silentMode": {
+      "bubble": "I'll be here when you're ready."
+    }
+  },
   "debug": {
     "tooltip": "Debug Panel",
     "panel_title": "Poke Debug Panel",
@@ -60,7 +89,12 @@
     "open_dialog": "Show Interrupt Dialog",
     "reset_timer": "Reset Scroll Timer",
     "scroll_duration": "Scroll Duration: {{time}}",
-    "cards_swiped": "Cards Swiped: {{count}}"
+    "cards_swiped": "Cards Swiped: {{count}}",
+    "interruption_count": "Interruptions: {{count}}",
+    "force_stage2": "Force 2nd Interruption",
+    "force_stage3": "Force 3rd Interruption",
+    "force_silent": "Force Silent Mode",
+    "reset_session": "Reset Session"
   },
   "welcome": {
     "tagline": "Ready?",
