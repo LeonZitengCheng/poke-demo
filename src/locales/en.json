@@ -1,0 +1,81 @@
+{
+  "dialogue": {
+    "threshold": {
+      "calm": [
+        "Hey, you've been scrolling for a while. What are you looking for? 👀",
+        "Hold on — just one tiny question.",
+        "Your thumb is on autopilot 🐾 — want to come back?"
+      ],
+      "withered": [
+        "...",
+        "You forgot about me again.",
+        "I've been sitting in the corner for a while.",
+        "It's okay. I'll wait."
+      ],
+      "playful": [
+        "Ding dong! Your awareness delivery has arrived. Please sign here. 📦",
+        "Your fingers woke up before your brain did.",
+        "I counted — that's video number 47."
+      ]
+    },
+    "acknowledged": {
+      "happy": [
+        "Got it, go ahead! I won't bug you.",
+        "You look really cool when you know what you're doing. 😎",
+        "Right, you're someone with a plan. Got it."
+      ]
+    },
+    "couldnt_answer": {
+      "calm": [
+        "That's normal. Most of the time, none of us really know.",
+        "That's okay — just noticing is enough. Want to put the phone down for a bit?"
+      ]
+    },
+    "dismissed": {
+      "withered": [
+        "...",
+        "You don't seem to want to talk to me today."
+      ]
+    }
+  },
+  "poke_clicked": "Excuse me?! 🐾",
+  "dialog": {
+    "title": "What were you looking for?",
+    "placeholder": "Tell me…",
+    "or_pick": "Or pick one:",
+    "options": {
+      "look_up": "Look something up",
+      "reply": "Reply to a message",
+      "browsing": "Just browsing, no reason",
+      "dont_know": "I honestly don't know"
+    },
+    "keep_scrolling": "Keep scrolling",
+    "tell_poke": "Let Poke know"
+  },
+  "debug": {
+    "tooltip": "Debug Panel",
+    "panel_title": "Poke Debug Panel",
+    "mood_label": "Mood State",
+    "trigger": "Trigger Poke Now",
+    "open_dialog": "Show Interrupt Dialog",
+    "reset_timer": "Reset Scroll Timer",
+    "scroll_duration": "Scroll Duration: {{time}}",
+    "cards_swiped": "Cards Swiped: {{count}}"
+  },
+  "welcome": {
+    "tagline": "Ready?",
+    "cta": "Let me in 🐾"
+  },
+  "feed": {
+    "cards": [
+      { "user": "@foodiehunter", "tag": "#latenightbites" },
+      { "user": "@beachvibes", "tag": "#summerwaves" },
+      { "user": "@thedailytune", "tag": "#healingvibes" },
+      { "user": "@gingercatdaily", "tag": "#catbedtimestories" },
+      { "user": "@slowlivingdaily", "tag": "#minimalistlife" },
+      { "user": "@courtside", "tag": "#intensemoments" },
+      { "user": "@forestmood", "tag": "#forestwalk" },
+      { "user": "@nightowldiaries", "tag": "#3am" }
+    ]
+  }
+}
