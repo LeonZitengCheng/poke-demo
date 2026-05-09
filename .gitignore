@@ -32,3 +32,4 @@ dist-ssr
 # Claude Code local config
 .claude/
 
+.Rhistory
