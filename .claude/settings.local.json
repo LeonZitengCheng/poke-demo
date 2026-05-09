@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(npm run *)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/poke-demo/sounds/pop.wav)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/poke-demo/sounds/chime.wav)"
-    ]
-  }
-}
